@@ -45,6 +45,57 @@
 .member__contents-post.teal{background:#1eb5d4;}
 /* チーム名が長く2行に折り返すため、役員紹介内のラベルのみ字送りを詰める */
 .executive .member__contents-post{font-size:10px;letter-spacing:0;padding-left:4px;padding-right:4px;}
+/* --- 入会申込書 様式 --- */
+.kk-pledge{background:#eef4f9;border-radius:8px;padding:26px 30px;margin-bottom:48px;}
+.kk-pledge__ttl{font-size:19px;font-weight:700;color:var(--kk-blue);margin:0 0 12px;line-height:1.5;}
+.kk-pledge__ttl span{font-size:14px;font-weight:400;color:#555;}
+.kk-pledge p{font-size:14px;line-height:1.9;margin:0;}
+.kk-sec{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+ margin:56px 0 22px;padding-bottom:12px;border-bottom:2px solid var(--kk-blue);}
+.kk-sec:first-of-type{margin-top:0;}
+.kk-sec__no{font-family:"Lato",sans-serif;font-size:30px;font-weight:700;color:var(--kk-blue);
+ line-height:1;letter-spacing:.02em;}
+.kk-sec__title{font-size:20px;font-weight:700;margin:0;color:#141414;}
+.kk-sec__lead{flex:0 0 100%;font-size:13px;color:#666;margin:8px 0 0;}
+.kk-row--full{display:block !important;}
+.kk-note{background:#f7f9fb;border:1px solid #dde5ec;border-radius:6px;padding:20px 24px;font-size:14px;line-height:1.9;}
+.kk-note p{margin:0 0 8px;}
+.kk-note ol{margin:0;padding-left:1.6em;list-style:decimal;}
+.kk-note li{margin-bottom:4px;}
+.kk-note--action{background:#fff8f2;border-color:#f3d4bb;}
+.kk-btn-modal{margin-top:12px;background:var(--kk-orange);color:#fff;border:0;border-radius:4px;
+ padding:11px 22px;font-size:14px;font-weight:700;cursor:pointer;}
+.kk-btn-modal:hover{opacity:.85;}
+.kk-choices{display:flex;flex-wrap:wrap;gap:10px 26px;}
+.kk-choices--block{flex-direction:column;gap:12px;}
+.kk-choices .wpcf7-list-item{margin:0;}
+.kk-choices label{display:flex;align-items:flex-start;gap:8px;font-size:15px;cursor:pointer;line-height:1.6;}
+/* テーマが input{appearance:none} で全入力の見た目を消しているため、選択肢だけ戻す */
+.kk-choices input[type=checkbox],.kk-choices input[type=radio],
+.kk-consent input[type=checkbox]{-webkit-appearance:auto;appearance:auto;
+ accent-color:#006eb9;background:initial;border:initial;border-radius:initial;}
+.kk-choices input{margin-top:3px;width:17px;height:17px;flex:0 0 auto;}
+.kk-choices small{display:block;font-size:12px;color:#666;font-weight:400;margin-top:2px;}
+/* テーマは [type=text][type=tel][type=email] にしか枠線を当てていないため url も同じ見た目に */
+.contact-form__input [type=url]{box-shadow:none;border:1px solid #141414;background:#fff;
+ padding:13px 20px;-webkit-appearance:none;appearance:none;border-radius:3px;color:inherit;
+ font-family:inherit;font-size:14px;width:100%;}
+/* テーマが select{width:100%} を当てているため、生年月日の3つは幅を個別指定する */
+.kk-bd{display:flex;gap:12px;align-items:center;flex-wrap:nowrap;}
+.kk-bd__item{display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;}
+.kk-bd__item select{width:auto !important;min-width:92px;}
+.kk-bd__unit{font-size:14px;color:#444;white-space:nowrap;}
+@media(max-width:400px){.kk-bd{gap:7px;}.kk-bd__item select{min-width:0;width:100%!important;}
+ .kk-bd__item{flex:1 1 0;}}
+.kk-consent{display:block;background:#eef4f9;border-radius:6px;padding:16px 20px;margin-top:16px;}
+.kk-consent label{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.kk-consent input{width:19px;height:19px;flex:0 0 auto;accent-color:#006eb9;}
+.kk-consent__txt{font-size:15px;font-weight:700;}
+.kk-req{color:var(--kk-orange);font-size:12px;margin-left:8px;}
+.kk-modal__foot{font-size:13px;color:#555;margin:14px 0 0;text-align:center;}
+@media(max-width:767px){.kk-sec{margin:40px 0 18px;}.kk-sec__no{font-size:24px;}
+ .kk-sec__title{font-size:17px;}.kk-pledge{padding:20px;margin-bottom:34px;}
+ .kk-pledge__ttl{font-size:16px;}}
 /* --- フッターのQRコード3点 --- */
 .footer__qr{flex:0 0 100%;width:100%;margin-top:44px;padding-top:34px;
  border-top:1px solid rgba(255,255,255,.25);}

@@ -76,6 +76,10 @@
  accent-color:#006eb9;background:initial;border:initial;border-radius:initial;}
 .kk-choices input{margin-top:3px;width:17px;height:17px;flex:0 0 auto;}
 .kk-choices small{display:block;font-size:12px;color:#666;font-weight:400;margin-top:2px;}
+/* テーマは [type=text][type=tel][type=email] にしか枠線を当てていないため url も同じ見た目に */
+.contact-form__input [type=url]{box-shadow:none;border:1px solid #141414;background:#fff;
+ padding:13px 20px;-webkit-appearance:none;appearance:none;border-radius:3px;color:inherit;
+ font-family:inherit;font-size:14px;width:100%;}
 /* テーマが select{width:100%} を当てているため、生年月日の3つは幅を個別指定する */
 .kk-bd{display:flex;gap:12px;align-items:center;flex-wrap:nowrap;}
 .kk-bd__item{display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;}
@@ -187,23 +191,15 @@ var cf7msm_redirect_urls = {"326":"/entry-confirm"};
 <button class="kk-modal__close" aria-label="閉じる"
  onclick="document.getElementById('kkModal').classList.remove('is-open')">&times;</button>
 <img src="img/popup-1.png" alt="正会員と賛助会員の違い">
-<p class="kk-modal__foot">内容をご確認のうえ、下の「05 会員種別」でご希望の会員種別をお選びください。</p>
+<p class="kk-modal__foot">内容をご確認のうえ、下の「ご希望の会員種別」をお選びください。</p>
 </div></div>
 <script>
 (function(){
   var m=document.getElementById('kkModal');
-  window.kkOpenModal=function(){m.classList.add('is-open');};
+  window.kkOpenModal=function(){m.classList.add('is-open');};   // ボタンを押した時だけ開く
   var close=function(){m.classList.remove('is-open');};
   m.addEventListener('click',function(e){if(e.target===m)close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-  // 「05 会員種別」までスクロールしてきたときに1回だけ自動で開く
-  var target=document.getElementById('sec05');
-  if(target&&'IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(en){ if(en.isIntersecting){ window.kkOpenModal(); io.disconnect(); } });
-    },{threshold:0.4});
-    io.observe(target);
-  }
 })();
 </script>
-<button id="rvw-btn" onclick="document.getElementById('rvw').classList.toggle('is-open')">確認していただきたい点 10件</button><div id="rvw"><h5>ご確認いただきたい点</h5><ol><li><span class="ttl">① 様式の作り</span><br>いただいた入会申込書の様式どおり、<b>01〜06の6区分</b>に組み直しました。冒頭に誓約文を入れています。</li><li><span class="ttl">② 生年月日</span><br>カレンダー入力だと当日の日付が出て分かりにくかったため、<b>年・月・日の3つの選択</b>に変えました。西暦1930年〜2010年まで選べます。</li><li><span class="ttl">③ 削除した項目</span><br>様式に記載のない項目を外しました。<br>郵便番号／携帯番号／会社名(フリガナ)／<b>業種</b>／紹介者2人目／請求先担当者・同メールアドレス／FAX／ご希望の連絡方法</li><li><span class="ttl">④ 業種について（要ご判断）</span><br><b>業種は現在の会員紹介ページの分類（サービス業・建設業…）に使われています。</b>フォームから外すと、新しく入会された方の業種を事務局で別途お聞きして登録する手間が発生します。それでよろしいでしょうか。</li><li><span class="ttl">⑤ 従業員数について（要ご判断）</span><br>口頭では年商のみのご指定でしたが、<b>様式には従業員数の記載があり、以前に選択肢もご指定いただいていた</b>ため残しています。不要ならお知らせください。</li><li><span class="ttl">⑥ 05の会員種別の選び方</span><br>見出しは様式どおり「賛助と正会員の説明とチェックボックス」にしました。<b>どちらの会員を希望されるかの選択欄は残しています</b>（無いと事務局側で判別できないため）。説明と確認チェックだけにする場合はお知らせください。</li><li><span class="ttl">⑦ 確認チェック</span><br>「違いを確認しました」と「反社会的勢力に関する表明・保証」を<b>それぞれ必須チェック</b>にしています。チェックしないと送信できません。</li><li><span class="ttl">⑧ 賛助・正会員の違いの出し方</span><br>ページを開いた瞬間ではなく、<b>05までスクロールしてきたときに1回だけ</b>自動で開きます。ボタンでいつでも開き直せます。</li><li><span class="ttl">⑨ 会費の記載</span><br>正会員 月2,500円×12＝年30,000円（税別）／賛助会員 月2,000円×12＝年24,000円（税別）。<b>金額に相違がないかご確認ください。</b></li><li><span class="ttl">⑩ このページの注意</span><br>見た目の確認用です。<b>実際の送信・確認画面・自動返信メールは動きません。</b>その部分はWordPress上のテスト環境で改めてご確認いただきます。</li></ol><p style="margin-top:12px;color:#777">※このパネルはご確認用です。本番サイトには入りません。</p></div></body></html>
+<button id="rvw-btn" onclick="document.getElementById('rvw').classList.toggle('is-open')">確認していただきたい点 11件</button><div id="rvw"><h5>ご確認いただきたい点</h5><ol><li><span class="ttl">① 様式の作り</span><br>いただいた入会申込書の様式どおり、<b>01〜06の6区分</b>に組み直しました。冒頭に誓約文を入れています。</li><li><span class="ttl">② 生年月日</span><br>カレンダー入力だと当日の日付が出て分かりにくかったため、<b>年・月・日の3つの選択</b>に変えました。西暦1930年〜2010年まで選べます。</li><li><span class="ttl">③ 削除した項目</span><br>様式に記載のない項目を外しました。<br>郵便番号／携帯番号／会社名(フリガナ)／<b>業種</b>／紹介者2人目／請求先担当者・同メールアドレス／FAX／ご希望の連絡方法</li><li><span class="ttl">④ 業種について（要ご判断）</span><br><b>業種は現在の会員紹介ページの分類（サービス業・建設業…）に使われています。</b>フォームから外すと、新しく入会された方の業種を事務局で別途お聞きして登録する手間が発生します。それでよろしいでしょうか。</li><li><span class="ttl">⑤ 従業員数について（要ご判断）</span><br>口頭では年商のみのご指定でしたが、<b>様式には従業員数の記載があり、以前に選択肢もご指定いただいていた</b>ため残しています。不要ならお知らせください。</li><li><span class="ttl">⑥ 05の会員種別の選び方</span><br>見出しは様式どおり「賛助と正会員の説明とチェックボックス」にしました。<b>どちらの会員を希望されるかの選択欄は残しています</b>（無いと事務局側で判別できないため）。説明と確認チェックだけにする場合はお知らせください。</li><li><span class="ttl">⑦ 確認チェック</span><br>「違いを確認しました」と「反社会的勢力に関する表明・保証」を<b>それぞれ必須チェック</b>にしています。チェックしないと送信できません。</li><li><span class="ttl">⑧ 賛助・正会員の違いの出し方</span><br>ご指示どおり<b>自動表示はやめました</b>。「正会員と賛助会員の違いを見る」ボタンを押したときだけ開きます。</li><li><span class="ttl">⑨ 会費の記載</span><br>正会員 月2,500円×12＝年30,000円（税別）／賛助会員 月2,000円×12＝年24,000円（税別）。<b>金額に相違がないかご確認ください。</b></li><li><span class="ttl">⑩ 現在のサイトの不具合を1件見つけました</span><br>テーマのCSSに<b>制作時のテスト環境のURL（keikeikai-test.local）が6か所残っており</b>、選択欄の▼矢印など一部の画像が現在のサイトで読み込めていません。このモックでは正しいURLに直してあります。<b>本番へ反映する際に一緒に直しておきます。</b></li><li><span class="ttl">⑪ このページの注意</span><br>見た目の確認用です。<b>実際の送信・確認画面・自動返信メールは動きません。</b>その部分はWordPress上のテスト環境で改めてご確認いただきます。</li></ol><p style="margin-top:12px;color:#777">※このパネルはご確認用です。本番サイトには入りません。</p></div></body></html>
