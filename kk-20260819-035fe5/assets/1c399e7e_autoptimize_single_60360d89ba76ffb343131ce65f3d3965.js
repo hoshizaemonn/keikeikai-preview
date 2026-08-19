@@ -1,0 +1,1 @@
+if(document.URL.match()){new Splide(".splide",{fixedWidth:246,fixedHeight:164.19,perPage:4,gap:23,breakpoints:{768:{fixedWidth:320,fixedHeight:240,perPage:1,gap:16,}},arrows:false,pagination:false,autoScroll:{speed:0.5,pauseHover:false,},type:"loop",}).mount(window.splide.Extensions);}
