@@ -17,11 +17,12 @@
 <style id="mock-css">
 :root{--kk-blue:#006eb9;--kk-orange:#e86216;}
 /* --- MVV（「6つの部会」の青背景デザインをそのまま使う） --- */
-.kk-mvv__body{flex:1 1 0;min-width:0;}
-.kk-mvv__eyebrow{font-size:12px;letter-spacing:.24em;opacity:.85;margin-bottom:8px;}
+.kk-mvv .church__inner{justify-content:center;}
+.kk-mvv__body{max-width:1000px;width:100%;text-align:center;}
+.kk-mvv__eyebrow{font-size:13px;letter-spacing:.24em;opacity:.85;margin-bottom:10px;}
 .kk-mvv .church__title{line-height:1.5;}
-/* 右カラムは幅が限られるため縦積みにする */
-.kk-mvv__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:26px;}
+.kk-mvv__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:34px;margin-top:44px;text-align:left;}
 .kk-mvv__col{min-width:0;}
 .kk-mvv__ttl{font-family:"Lato",sans-serif;font-size:15px;font-weight:700;letter-spacing:.16em;
  padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.4);}
@@ -44,8 +45,8 @@
 .kk-mvv .mk3::after{background:#e77c9b;} .kk-mvv .mk4::after{background:#52b147;}
 .kk-mvv .mk5::after{background:#d4cb2e;} .kk-mvv .mk6::after{background:#1eb5d4;}
 .kk-mvv .church__contact{display:flex;justify-content:center;margin-top:44px;}
-@media(max-width:900px){.kk-mvv__grid{gap:20px;margin-top:22px;}
- .kk-mvv__eyebrow{font-size:11px;}.kk-mvv .church__contact{margin-top:28px;}}
+@media(max-width:900px){.kk-mvv__grid{grid-template-columns:minmax(0,1fr);gap:26px;margin-top:30px;}
+ .kk-mvv__eyebrow{font-size:11px;}.kk-mvv .church__contact{margin-top:32px;}}
 /* --- 挨拶の追記行 --- */
 .texts-lead{font-size:21px;font-weight:700;line-height:1.6;color:var(--kk-blue);margin-bottom:18px;}
 .texts-org{font-size:13px;line-height:1.8;color:#555;margin-top:6px;}
@@ -176,10 +177,7 @@
  alt="資料ダウンロードのマーク">会員企業紹介<br>パンフレット </a></div></div></div></header><div class="fv"><div class="fv__bg-img"> <noscript><img src="https://keikeikai.jp/sys/wp-content/themes/keikeikai/assets/img/fv-bg_2.png" alt="ファーストビューの画像"></noscript><img src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E' class="lazyload" data-src="https://keikeikai.jp/sys/wp-content/themes/keikeikai/assets/img/fv-bg_2.png" alt="ファーストビューの画像"></div><div class="fv__contents wow animated fadeInUp"><h2> <span>Platform</span><span>For</span><span>Expand business</span></h2><p>企業の弥栄に寄与するビジネス拡大のプラットフォーム</p></div><div class="scrolldown"> <span>Scroll</span></div></div><section class="about" id="about"><div class="inner"><div class="about__bg-text wow animated fadeInUp"><p>What's <br class="sp"><span>KEIKEIKAI</span></p></div><div class="about__contens"><h3 class=" wow animated fadeInUp" data-wow-delay="0.5s">企業の弥栄を応援する</h3><div class="about__text wow animated fadeInUp" data-wow-delay="0.7s"> 一般社団法人経慶会は、さまざまなテーマについて<br class="pc">活発な討議・調査活動等を通し、<br class="pc">各会員の発展に寄与し、日本の活性化を強く推進することを<br
  class="pc">目的として発足いたしました。</div><div class="about__text wow animated fadeInUp" data-wow-delay="0.9s"> ビジネスリーダーが集い、知識、経験、アイデアを共有し、<br class="pc">新たな連携や企業成長の機会を模索する場を提供いたします。</div><div class="about__text wow animated fadeInUp" data-wow-delay="1.1s"> 共に未来へ向かうパートナーシップの源となり、<br class="pc">持続可能なビジネス成長を実現します。</div></div></div><div class="about__bottom-bg"> <noscript><img src="https://keikeikai.jp/sys/wp-content/themes/keikeikai/assets/img/about-bottom-bg.png" alt=""></noscript><img src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E' class="lazyload" data-src="https://keikeikai.jp/sys/wp-content/themes/keikeikai/assets/img/about-bottom-bg.png" alt=""></div></section>
 <section class="church kk-mvv" id="mvv"><div class="church__inner">
-<div class="church__left wow animated fadeInUp"><div class="church__img">
-<img src="https://keikeikai.jp/sys/wp-content/themes/keikeikai/assets/img/5th-church.png" alt="経慶会の図解画像">
-</div></div>
-<div class="church__right kk-mvv__body wow animated fadeInUp" data-wow-delay="0.5s">
+<div class="church__right kk-mvv__body wow animated fadeInUp">
  <p class="kk-mvv__eyebrow">SLOGAN</p>
  <h3 class="church__title">政治と経済をつなぎ、<br class="sp">未来を創る</h3>
  <div class="kk-mvv__grid">
