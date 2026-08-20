@@ -17,11 +17,12 @@
 <style id="mock-css">
 :root{--kk-blue:#006eb9;--kk-orange:#e86216;}
 /* --- MVV（「6つの部会」の青背景デザインをそのまま使う） --- */
-.kk-mvv__body{flex:1 1 0;min-width:0;}
-.kk-mvv__eyebrow{font-size:12px;letter-spacing:.24em;opacity:.85;margin-bottom:8px;}
+.kk-mvv .church__inner{justify-content:center;}
+.kk-mvv__body{max-width:1000px;width:100%;text-align:center;}
+.kk-mvv__eyebrow{font-size:13px;letter-spacing:.24em;opacity:.85;margin-bottom:10px;}
 .kk-mvv .church__title{line-height:1.5;}
-/* 右カラムは幅が限られるため縦積みにする */
-.kk-mvv__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:26px;}
+.kk-mvv__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:34px;margin-top:44px;text-align:left;}
 .kk-mvv__col{min-width:0;}
 .kk-mvv__ttl{font-family:"Lato",sans-serif;font-size:15px;font-weight:700;letter-spacing:.16em;
  padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.4);}
@@ -44,8 +45,8 @@
 .kk-mvv .mk3::after{background:#e77c9b;} .kk-mvv .mk4::after{background:#52b147;}
 .kk-mvv .mk5::after{background:#d4cb2e;} .kk-mvv .mk6::after{background:#1eb5d4;}
 .kk-mvv .church__contact{display:flex;justify-content:center;margin-top:44px;}
-@media(max-width:900px){.kk-mvv__grid{gap:20px;margin-top:22px;}
- .kk-mvv__eyebrow{font-size:11px;}.kk-mvv .church__contact{margin-top:28px;}}
+@media(max-width:900px){.kk-mvv__grid{grid-template-columns:minmax(0,1fr);gap:26px;margin-top:30px;}
+ .kk-mvv__eyebrow{font-size:11px;}.kk-mvv .church__contact{margin-top:32px;}}
 /* --- 挨拶の追記行 --- */
 .texts-lead{font-size:21px;font-weight:700;line-height:1.6;color:var(--kk-blue);margin-bottom:18px;}
 .texts-org{font-size:13px;line-height:1.8;color:#555;margin-top:6px;}
@@ -206,4 +207,4 @@
 };
 //# sourceURL=contact-form-7-js-before</script> <script defer id="contact-form-7-js" src="assets/cc445f6c_autoptimize_single_2912c657d0592cc532dff73d0d2ce7bb.js"></script> <script id="cf7msm-js-extra">var cf7msm_posted_data = [];
 var cf7msm_honeypot_field_matchers = [];
-//# sourceURL=cf7msm-js-extra</script> <script defer id="cf7msm-js" src="assets/98d30536_cf7msm.min.js"></script> <script defer id="my-script-js" src="assets/802e9738_autoptimize_single_e5f1724bdc7eb2d1f5349a5068d3d57d.js"></script> <script defer id="my-splide-js" src="assets/1c399e7e_autoptimize_single_60360d89ba76ffb343131ce65f3d3965.js"></script> <a id="rvw-home" href="index.html">&#9664; 案内ページ</a><button id="rvw-btn" onclick="document.getElementById('rvw').classList.toggle('is-open')">確認していただきたい点 3件</button><div id="rvw"><h5>ご確認いただきたい点</h5><ol><li><span class="ttl">これは修正前のページです</span><br>ご依頼をいただく前の「6つの部会」の状態です。<b>背景画像が読み込めていなかった不具合だけを直して</b>表示しているので、本来こう見えるはずだった姿になります。</li><li><span class="ttl">今のホームページとの違い</span><br>本番では背景画像が出ないため<b>白地に白文字</b>となり、見出しも本文も消えて、文字の下の色帯だけが見えている状態です。</li><li><span class="ttl">修正後を見る</span><br>上部のオレンジの帯にある「修正後（MVV）を見る」からご覧いただけます。</li></ol><p style="margin-top:12px;color:#777">※このパネルはご確認用です。本番サイトには入りません。</p></div></body></html>
+//# sourceURL=cf7msm-js-extra</script> <script defer id="cf7msm-js" src="assets/98d30536_cf7msm.min.js"></script> <script defer id="my-script-js" src="assets/802e9738_autoptimize_single_e5f1724bdc7eb2d1f5349a5068d3d57d.js"></script> <script defer id="my-splide-js" src="assets/1c399e7e_autoptimize_single_60360d89ba76ffb343131ce65f3d3965.js"></script> </body></html>
