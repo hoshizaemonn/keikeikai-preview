@@ -37,12 +37,25 @@ footer{margin-top:48px;font-size:12px;color:#888;border-top:1px solid #dde5ec;pa
 
 <h2>ご確認いただくページ</h2>
 <a class="card" href="top.html"><div class="t">① トップページ　MVVを追加</div>
-<div class="d">スローガン・ミッション・ビジョン・バリューを「What's KEIKEIKAI」の下に追加しました。</div></a>
+<div class="d">「6つの部会」があった青いセクションのデザインをそのまま使い、左の図解はそのままに、右側にスローガン・ミッション・ビジョン・バリューを入れました。</div></a>
 <a class="card" href="about.html"><div class="t">② 経慶会とは　挨拶文・理事長・役員一覧</div>
 <div class="d">代表理事／理事長の挨拶文の差し替え、理事長のお写真とお名前の変更、役員一覧の入れ替えと並び順の変更。</div></a>
 <a class="card" href="entry.html"><div class="t">③ 入会フォーム　従業員数・年商とポップアップ</div>
 <div class="d">従業員数と年商の選択項目を追加。ページを開くとポップアップが表示されます。</div></a>
+<a class="card" href="before.html" style="border-color:#f3d4bb;background:#fff8f2"><div class="t" style="color:#e86216">参考：修正前の「6つの部会」</div>
+<div class="d">ご依頼前の状態です。<b>今のホームページで表示が崩れていた不具合（背景画像が読み込めていない）だけを直して</b>表示しています。本来こう見えるはずだった姿です。</div></a>
 <p style="font-size:14px;color:#555">各ページの右下にオレンジ色の「確認していただきたい点」ボタンがあります。押すと、こちらからの質問が開きます。</p>
+
+<h2>現在のホームページの不具合について</h2>
+<div class="note">
+<b>トップページの「6つの部会」が崩れている原因が分かりました。</b><br>
+テーマのCSSで、背景画像の指定先が<b>制作時のテスト環境のURL（keikeikai-test.local）のまま</b>になっており、
+画像が読み込めていません。背景が出ない＝白地に白文字となり、見出しも本文も消えて、
+文字の下の色帯だけが見えている状態でした。<br>
+画像そのものは正しい場所に存在するため、<b>CSSの参照先を直すだけで復旧します。</b>
+同じ原因で、選択欄の▼矢印やページ内ナビの矢印も消えています（計6か所）。<br>
+今回のご依頼とは別件ですが、<b>本番へ反映する際に一緒に直します。</b>
+</div>
 
 <h2>今回できていること／できていないこと</h2>
 <table>
