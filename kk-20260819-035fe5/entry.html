@@ -15,30 +15,37 @@
 //# sourceURL=fvp-frontend-js-extra</script> <script defer id="fvp-frontend-js" src="assets/886697ac_frontend.min.js"></script> <link rel="https://api.w.org/" href="https://keikeikai.jp/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://keikeikai.jp/wp-json/wp/v2/pages/713" />
 <style id="mock-css">
 :root{--kk-blue:#006eb9;--kk-orange:#e86216;}
-/* --- MVV --- */
-.mvv{padding:80px 0 90px;background:#f7f9fb;}
-.mvv .inner{max-width:1100px;margin:0 auto;padding:0 20px;}
-.mvv__slogan{text-align:center;margin-bottom:56px;}
-.mvv__slogan span{display:inline-block;font-size:13px;letter-spacing:.2em;color:var(--kk-blue);
- border:1px solid var(--kk-blue);border-radius:20px;padding:5px 18px;margin-bottom:18px;}
-.mvv__slogan h3{font-size:34px;line-height:1.5;font-weight:700;color:#141414;}
-.mvv__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
-.mvv__card{min-width:0;overflow-wrap:anywhere;background:#fff;border-radius:10px;padding:34px 28px;box-shadow:0 2px 14px rgba(0,0,0,.06);}
-.mvv__card h4{font-size:12px;letter-spacing:.18em;color:var(--kk-orange);margin-bottom:6px;}
-.mvv__card .jp{font-size:20px;font-weight:700;margin-bottom:18px;color:#141414;}
-.mvv__card ol{counter-reset:m;list-style:none;margin:0;padding:0;}
-.mvv__card ol li{counter-increment:m;position:relative;padding-left:34px;margin-bottom:14px;
- font-size:15px;line-height:1.75;}
-.mvv__card ol li::before{content:counter(m);position:absolute;left:0;top:2px;width:24px;height:24px;
- border-radius:50%;background:var(--kk-blue);color:#fff;font-size:12px;display:flex;
- align-items:center;justify-content:center;}
-.mvv__card p{font-size:15px;line-height:1.9;}
-.mvv__card .val{font-weight:700;color:var(--kk-blue);display:block;font-size:15px;}
-.mvv__card .val small{display:block;font-weight:400;color:#555;font-size:13px;margin-top:2px;}
-/* 元の「詳しく見る」と同じ見え方にする（.church__contact と同じ組み方） */
-.mvv__more{display:flex;justify-content:center;margin-top:48px;}
-@media(max-width:900px){.mvv__grid{grid-template-columns:minmax(0,1fr);}.mvv__slogan h3{font-size:24px;}
- .mvv{padding:56px 0 60px;}}
+/* --- MVV（「6つの部会」の青背景デザインをそのまま使う） --- */
+.kk-mvv .church__inner{justify-content:center;}
+.kk-mvv__body{max-width:1000px;width:100%;text-align:center;}
+.kk-mvv__eyebrow{font-size:13px;letter-spacing:.24em;opacity:.85;margin-bottom:10px;}
+.kk-mvv .church__title{line-height:1.5;}
+.kk-mvv__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:34px;margin-top:44px;text-align:left;}
+.kk-mvv__col{min-width:0;}
+.kk-mvv__ttl{font-family:"Lato",sans-serif;font-size:15px;font-weight:700;letter-spacing:.16em;
+ padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.4);}
+.kk-mvv__ttl small{display:block;font-family:inherit;font-size:12px;font-weight:400;
+ letter-spacing:.04em;opacity:.85;margin-top:3px;}
+.kk-mvv__list{counter-reset:mv;list-style:none;margin:0;padding:0;}
+.kk-mvv__list li{counter-increment:mv;position:relative;padding-left:26px;margin-bottom:12px;
+ font-size:15px;line-height:1.85;}
+.kk-mvv__list li::before{content:counter(mv)".";position:absolute;left:0;font-weight:700;opacity:.9;}
+.kk-mvv__txt{font-size:14px;line-height:1.95;margin:0;}
+.kk-mvv__vals{list-style:none;margin:0;padding:0;}
+.kk-mvv__vals li{margin-bottom:14px;}
+.kk-mvv__vals span{font-family:"Lato",sans-serif;font-size:15px;font-weight:700;letter-spacing:.04em;}
+.kk-mvv__vals small{display:block;font-size:12px;line-height:1.7;opacity:.9;margin-top:4px;}
+/* 部会セクションと同じカラーマーカー（文字の下に色帯を敷く） */
+.kk-mvv .mk{display:inline-block;position:relative;z-index:1;}
+.kk-mvv .mk::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+ width:calc(100% + 4px);height:6px;z-index:-1;opacity:.9;}
+.kk-mvv .mk1::after{background:#e99e23;} .kk-mvv .mk2::after{background:#424697;}
+.kk-mvv .mk3::after{background:#e77c9b;} .kk-mvv .mk4::after{background:#52b147;}
+.kk-mvv .mk5::after{background:#d4cb2e;} .kk-mvv .mk6::after{background:#1eb5d4;}
+.kk-mvv .church__contact{display:flex;justify-content:center;margin-top:44px;}
+@media(max-width:900px){.kk-mvv__grid{grid-template-columns:minmax(0,1fr);gap:28px;margin-top:32px;}
+ .kk-mvv__eyebrow{font-size:11px;}.kk-mvv .church__contact{margin-top:32px;}}
 /* --- 挨拶の追記行 --- */
 .texts-lead{font-size:21px;font-weight:700;line-height:1.6;color:var(--kk-blue);margin-bottom:18px;}
 .texts-org{font-size:13px;line-height:1.8;color:#555;margin-top:6px;}
