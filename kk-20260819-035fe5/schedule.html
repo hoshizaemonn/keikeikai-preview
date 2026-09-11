@@ -20,6 +20,10 @@
 /* --- 役員紹介：左寄せ（2026-09-11） --- */
 .kk-exec__row{justify-content:flex-start;}
 .kk-exec__post{text-align:left;}
+/* 見出し「役員紹介」を上に置き、組織図と同じ間隔を空けてからカードを並べる（横並びをやめる） */
+.executive__body{flex-direction:column;row-gap:3.4rem;}
+.executive__body .executive__contents{width:100%;}
+@media(max-width:767px){.executive__body{row-gap:2rem;}}
 /* 写真の下の業種・会社名・役職・氏名も左寄せ */
 .kk-exec .member__contents-card p{text-align:left;}
 
