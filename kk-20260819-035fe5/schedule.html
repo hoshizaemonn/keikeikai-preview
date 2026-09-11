@@ -20,6 +20,18 @@
 /* --- 役員紹介：左寄せ（2026-09-11） --- */
 .kk-exec__row{justify-content:flex-start;}
 .kk-exec__post{text-align:left;}
+/* --- 組織図（組織概要の下） --- */
+.kk-org{padding:0 2.4rem 9rem;}
+.kk-org .common-sec-title{margin-bottom:3.4rem;}
+.kk-org__wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.kk-org__wrap img{display:block;width:100%;max-width:1100px;height:auto;margin:0 auto;}
+.kk-org__hint{display:none;font-size:1.2rem;color:#666;margin:1rem 0 0;}
+@media(max-width:767px){
+ .kk-org{padding:0 1.6rem 6rem;}
+ .kk-org .common-sec-title{margin-bottom:2rem;}
+ /* 文字が小さくなりすぎるため、スマホでは横スクロールで原寸に近い大きさを保つ */
+ .kk-org__wrap img{width:760px;max-width:none;margin:0;}
+ .kk-org__hint{display:block;}}
 /* --- 住所の折り返し制御（番地の途中で折れないように） --- */
 .kk-nowrap{white-space:nowrap;display:inline-block;}
 /* --- チーム紹介・年間スケジュール（経慶会修正指示.ai の配色 金#cfa33c／紺#112e53／青#cee3f3／ベージュ#f1e4c6） --- */
