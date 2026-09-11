@@ -190,7 +190,7 @@
 .kk-orgc__row--l4{grid-template-columns:repeat(5,minmax(0,1fr));}
 .kk-orgc__row--l4 .l4-a{grid-column:3;}
 .kk-orgc__row--l4 .l4-b{grid-column:4 / span 2;}
-.kk-orgc__row--l5{grid-template-columns:repeat(7,minmax(0,1fr));gap:1.4rem;}
+.kk-orgc__row--l5{grid-template-columns:repeat(7,minmax(0,1fr));gap:var(--gap);}
 .kk-orgc__row--l6{grid-template-columns:minmax(0,1fr);}
 /* 箱 */
 .kk-orgc__box{position:relative;z-index:1;background:#fff;border:2px solid #006eb9;border-radius:6px;
@@ -206,7 +206,7 @@
 .kk-orgc__box.is-side .kk-orgc__names{font-size:1.3rem;}
 .kk-orgc__box.is-side .kk-orgc__names span{display:inline-block;margin-right:1.2em;}
 .kk-orgc__box.is-team{background:#e6f3fa;border-color:#7fc6e5;padding:1rem .6rem 1.2rem;}
-.kk-orgc__box.is-team::after{content:"";position:absolute;left:0;right:0;bottom:0;height:.5rem;background:#e86216;border-radius:0 0 4px 4px;}
+.kk-orgc__box.is-team{border-bottom:.6rem solid #e86216;}
 .kk-orgc__box.is-team .kk-orgc__names{font-size:1.3rem;}
 .kk-orgc__box.is-team .kk-orgc__names small{font-size:1rem;display:block;line-height:1.2;}
 .kk-orgc__box.is-wide{background:#f3f3f3;border-color:#ccc;flex-direction:row;gap:1.2rem;}
@@ -214,15 +214,17 @@
 /* 線：段と段の間の縦線（中央）／横バス／各箱からの短い縦線 */
 .kk-orgc__link{height:3.6rem;position:relative;}
 .kk-orgc__link::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--line);}
-.kk-orgc__row.has-bus::before{content:"";position:absolute;top:-1.8rem;height:2px;background:var(--line);left:var(--bus-from);right:var(--bus-to);}
-.kk-orgc__row.has-bus>.kk-orgc__box::before{content:"";position:absolute;left:50%;top:-1.8rem;height:1.8rem;width:2px;margin-left:-1px;background:var(--line);}
-.kk-orgc__row--l2{--bus-from:30%;--bus-to:30%;}   /* 会計〜監査の中心（5列の 2〜4 列目） */
-.kk-orgc__row--l5{--bus-from:7.14%;--bus-to:7.14%;}
+/* 横バスは各箱が自分の中心から隣の箱まで引く（両端の箱は中心で止める）。列の%で引くと角がずれるため */
+.kk-orgc__row.has-bus>.kk-orgc__box::before{content:"";position:absolute;left:50%;top:-1.8rem;height:1.9rem;width:2px;margin-left:-1px;background:var(--line);}
+.kk-orgc__row.has-bus>.kk-orgc__box::after{content:"";position:absolute;top:-1.8rem;height:2px;background:var(--line);
+ left:calc(-1 * var(--gap));right:calc(-1 * var(--gap));z-index:-1;}
+.kk-orgc__row.has-bus>.kk-orgc__box:first-child::after{left:50%;}
+.kk-orgc__row.has-bus>.kk-orgc__box:last-child::after{right:50%;}
+.kk-orgc__row--l5{--gap:1.4rem;}
 /* 1段目：代表理事 → 代表理事補佐 → 特別顧問 を横につなぐ */
 .kk-orgc__row--l1::before{content:"";position:absolute;top:50%;left:50%;width:40%;height:2px;background:var(--line);}
 /* チーム → 一般会員：各チームから下へ */
 .kk-orgc__link--teams::before{display:none;}
-.kk-orgc__row--l5>.kk-orgc__box::after{}
 .kk-orgc__link--teams{background:
  repeating-linear-gradient(90deg,transparent 0,transparent calc(100%/14 - 1px),var(--line) calc(100%/14 - 1px),var(--line) calc(100%/14 + 1px),transparent calc(100%/14 + 1px),transparent calc(100%/7));}
 @media(max-width:1000px){
@@ -242,7 +244,7 @@
  .kk-orgc__row--l3 .kk-orgc__box,.kk-orgc__row--l4 .l4-a,.kk-orgc__row--l4 .l4-b{grid-column:1;}
  .kk-orgc__row--l5{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;}
  .kk-orgc__row--l5 .kk-orgc__box:last-child{grid-column:1 / -1;}
- .kk-orgc__row.has-bus::before,.kk-orgc__row.has-bus>.kk-orgc__box::before{display:none;}
+ .kk-orgc__row.has-bus>.kk-orgc__box::before,.kk-orgc__row.has-bus>.kk-orgc__box::after{display:none;}
  .kk-orgc__link{height:2.4rem;} .kk-orgc__link--teams{background:none;} .kk-orgc__link--teams::before{display:block;}
  .kk-orgc__box.is-wide{flex-direction:column;gap:.3rem;}
  .kk-orgc__box.is-side .kk-orgc__names span{display:block;margin:0;}}
